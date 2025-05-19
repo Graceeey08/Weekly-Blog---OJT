@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My OJT Blog</title>
+
+    <!--vendor css ================================================== -->
+    <link rel="stylesheet" type="text/css" href="css/vendor.css">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!--Bootstrap ================================================== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
+    <!-- Style Sheet ================================================== -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Google Fonts ================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaldi&family=Merriweather:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- script ================================================== -->
+    <script src="js/modernizr.js"></script>
+</head>
+
+<body>
+    <!-- Add this right after the opening <body> tag in each file -->
+<div id="loader-wrapper" class="loader-wrapper">
+    <div class="loader">
+      <svg height="0" width="0" viewBox="0 0 64 64" class="absolute">
+        <defs xmlns="http://www.w3.org/2000/svg">
+          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="b">
+            <stop stop-color="#973BED"></stop>
+            <stop stop-color="#007CFF" offset="1"></stop>
+          </linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="0" x2="0" y1="64" x1="0" id="c">
+            <stop stop-color="#FFC800"></stop>
+            <stop stop-color="#F0F" offset="1"></stop>
+            <animateTransform repeatCount="indefinite" keySplines=".42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1" keyTimes="0; 0.125; 0.25; 0.375; 0.5; 0.625; 0.75; 0.875; 1" dur="8s" values="0 32 32;-270 32 32;-270 32 32;-540 32 32;-540 32 32;-810 32 32;-810 32 32;-1080 32 32;-1080 32 32" type="rotate" attributeName="gradientTransform"></animateTransform>
+          </linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="d">
+            <stop stop-color="#00E0ED"></stop>
+            <stop stop-color="#00DA72" offset="1"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+      
+      <!-- SDCC Letters -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#b)" d="M 54,12 C 54,6 48,4 32,4 16,4 10,6 10,12 10,24 16,28 32,28 48,28 54,36 54,44 54,56 48,60 32,60 16,60 10,56 10,52" class="dash" pathLength="360"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#c)" d="M 14,4 L 32,4 C 48,4 54,16 54,32 54,48 48,60 32,60 L 14,60 Z" class="dash" pathLength="360"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#d)" d="M 54,16 C 54,8 48,4 32,4 16,4 10,8 10,32 10,56 16,60 32,60 48,60 54,56 54,48" class="dash" pathLength="360"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#d)" d="M 54,16 C 54,8 48,4 32,4 16,4 10,8 10,32 10,56 16,60 32,60 48,60 54,56 54,48" class="dash-reverse" pathLength="360"></path>
+      </svg>
+    </div>
+  </div>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-icon" viewBox="0 0 512 512">
+            <path fill="currentColor"
+                d="m359.873 121.377l-22.627 22.627l95.997 95.997H16v32.001h417.24l-95.994 95.994l22.627 22.627L494.498 256L359.873 121.377z" />
+        </symbol>
+        <symbol id="search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <title>Search</title>
+            <path fill="currentColor"
+                d="M19 3C13.488 3 9 7.488 9 13c0 2.395.84 4.59 2.25 6.313L3.281 27.28l1.439 1.44l7.968-7.969A9.922 9.922 0 0 0 19 23c5.512 0 10-4.488 10-10S24.512 3 19 3zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8s-8-3.57-8-8s3.57-8 8-8z" />
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="close" viewBox="0 0 16 16">
+            <path
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+        </symbol>
+    </svg>
+
+
+    <!-- Navigation Section Starts -->
+    <nav id="header-nav" class="navbar navbar-expand-lg container-fluid py-4 px-3 px-lg-5 position-fixed">
+        <a class="navbar-brand" href="index.html"><img src="images/try.png" alt="logo"></a>
+        <p class="title-paragraph mb-0 mt-2">a Blog Requirement of BU</p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav text-center align-items-center justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active pe-lg-5" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pe-lg-5" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pe-lg-5" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pe-lg-5" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pe-lg-5" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- hero Section Starts -->
+    <section id="hero" class="padding-2xlarge jarallax">
+
+        <div class="container banner-content">
+            <div class="  offset-md-2 col-md-8 text-center mt-5 ">
+                <h1 class="display-1 "> Sto. Domingo Community College  </h1>
+                <p class="hero-paragraph mt-3">A Blog Requirement of Bicol University.</p>
+            </div>
+        </div>
+        <img src="images/hero-img.png" alt="banner" class="jarallax-img">
+
+    </section>
+
+
+    <!-- blog-card Section Starts -->
+    <section id="blog-card">
+        <div class="container my-5 py-5">
+            <p class="feature-title mt-1 text-center">Featured Posts</p>
+            <div class="row ">
+                <div class="col-md-6 col-lg-4">
+                    <div class="blog-post pt-5 pb-3">
+
+                        <div class="image-zoom">
+                            <a href="blog-single.html" class="blog-img"><img src="images/blog1.png" alt=""
+                                    class="img-fluid"></a>
+                        </div>
+                        <div class="pt-4">
+                            <span class="blog-date text-uppercase">in <b>Health</b> on 12th Jan 2023</span>
+                        </div>
+                        <div class="">
+                            <h3 class="py-3"><a href="blog-single.html" class="blog-link">I am alone, and feel the charm
+                                    of
+                                    existence
+                                    created for the bliss</a></h3>
+                            <p class="pb-3">I am so happy, my dear friend, so absorbed in the exquisite sense of mere
+                                tranquil existence, that I neglect my talents. I should be incapable of drawing since
+                            </p>
+                        </div>
+                        <div class="">
+                            <a href="blog-single.html"
+                                class="btn btn-outline-primary btn-arrow btn-pill btn-outline-light position-relative">
+                                <span class="py-2 px-4">Read more</span>
+                                <svg class="arrow-icon" width="18" height="20">
+                                    <use xlink:href="#arrow-icon"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="blog-post pt-5 pb-3">
+
+                        <div class="image-zoom">
+                            <a href="blog-post.html" class="blog-img"><img src="images/blog2.png" alt=""
+                                    class="img-fluid"></a>
+                        </div>
+                        <div class="pt-4">
+                            <span class="blog-date text-uppercase">in <b>Love and Relationship</b> on 12th Jan
+                                2023</span>
+                        </div>
+                        <div class="">
+                            <h3 class="py-3"><a href="blog-post.html" class="blog-link">I am alone, and feel the charm
+                                    of
+                                    existence
+                                    created for the bliss</a></h3>
+                            <p class="pb-3">I am so happy, my dear friend, so absorbed in the exquisite sense of mere
+                                tranquil existence, that I neglect my talents. I should be incapable of drawing since
+                            </p>
+                        </div>
+                        <div class="">
+                            <a href="blog-post.html"
+                                class="btn btn-outline-primary btn-arrow btn-pill btn-outline-light position-relative">
+                                <span class="py-2 px-4">Read more</span>
+                                <svg class="arrow-icon" width="18" height="20">
+                                    <use xlink:href="#arrow-icon"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="blog-post pt-5 pb-3">
+
+                        <div class="image-zoom">
+                            <a href="blog-single.html" class="blog-img"><img src="images/blog3.png" alt=""
+                                    class="img-fluid"></a>
+                        </div>
+                        <div class="pt-4">
+                            <span class="blog-date text-uppercase">in <b>Travel Tips</b> on 12th Jan 2023</span>
+                        </div>
+                        <div class="">
+                            <h3 class="py-3"><a href="blog-single.html" class="blog-link">I am alone, and feel the charm
+                                    of
+                                    existence
+                                    created for the bliss</a></h3>
+                            <p class="pb-3">I am so happy, my dear friend, so absorbed in the exquisite sense of mere
+                                tranquil existence, that I neglect my talents. I should be incapable of drawing since
+                            </p>
+                        </div>
+                        <div class="">
+                            <a href="blog-single.html"
+                                class="btn btn-outline-primary btn-arrow btn-pill btn-outline-light position-relative">
+                                <span class="py-2 px-4">Read more</span>
+                                <svg class="arrow-icon" width="18" height="20">
+                                    <use xlink:href="#arrow-icon"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="blog-post pt-5 pb-3">
+
+                        <div class="image-zoom">
+                            <a href="blog-single.html" class="blog-img"><img src="images/blog4.png" alt=""
+                                    class="img-fluid"></a>
+                        </div>
+                        <div class="pt-4">
+                            <span class="blog-date text-uppercase">in <b>Health</b> on 12th Jan 2023</span>
+                        </div>
+                        <div class="">
+                            <h3 class="py-3"><a href="blog-single.html" class="blog-link">I am alone, and feel the charm
+                                    of
+                                    existence
+                                    created for the bliss</a></h3>
+                            <p class="pb-3">I am so happy, my dear friend, so absorbed in the exquisite sense of mere
+                                tranquil existence, that I neglect my talents. I should be incapable of drawing since
+                            </p>
+                        </div>
+                        <div class="">
+                            <a href="blog-single.html"
+                                class="btn btn-outline-primary btn-arrow btn-pill btn-outline-light position-relative">
+                                <span class="py-2 px-4">Read more</span>
+                                <svg class="arrow-icon" width="18" height="20">
+                                    <use xlink:href="#arrow-icon"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="blog-post pt-5 pb-3">
+
+                        <div class="image-zoom">
+                            <a href="blog-single.html" class="blog-img"><img src="images/blog5.png" alt=""
+                                    class="img-fluid"></a>
+                        </div>
+                        <div class="pt-4">
+                            <span class="blog-date text-uppercase">in <b>Love and Relationship</b> on 12th Jan
+                                2023</span>
+                        </div>
+                        <div class="">
+                            <h3 class="py-3"><a href="blog-single.html" class="blog-link">I am alone, and feel the charm
+                                    of
+                                    existence
+                                    created for the bliss</a></h3>
+                            <p class="pb-3">I am so happy, my dear friend, so absorbed in the exquisite sense of mere
+                                tranquil existence, that I neglect my talents. I should be incapable of drawing since
+                            </p>
+                        </div>
+                        <div class="">
+                            <a href="blog-single.html"
+                                class="btn btn-outline-primary btn-arrow btn-pill btn-outline-light position-relative">
+                                <span class="py-2 px-4">Read more</span>
+                                <svg class="arrow-icon" width="18" height="20">
+                                    <use xlink:href="#arrow-icon"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="blog-post pt-5 pb-3">
+
+                        <div class="image-zoom">
+                            <a href="blog-single.html" class="blog-img"><img src="images/blog6.png" alt=""
+                                    class="img-fluid"></a>
+                        </div>
+                        <div class="pt-4">
+                            <span class="blog-date text-uppercase">in <b>Travel Tips</b> on 12th Jan 2023</span>
+                        </div>
+                        <div class="">
+                            <h3 class="py-3"><a href="blog-single.html" class="blog-link">I am alone, and feel the charm
+                                    of
+                                    existence
+                                    created for the bliss</a></h3>
+                            <p class="pb-3">I am so happy, my dear friend, so absorbed in the exquisite sense of mere
+                                tranquil existence, that I neglect my talents. I should be incapable of drawing since
+                            </p>
+                        </div>
+                        <div class="">
+                            <a href="blog-single.html"
+                                class="btn btn-outline-primary btn-arrow btn-pill btn-outline-light position-relative">
+                                <span class="py-2 px-4">Read more</span>
+                                <svg class="arrow-icon" width="18" height="20">
+                                    <use xlink:href="#arrow-icon"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <!-- Blog-block Section Starts -->
+    <section id="blog-block">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-5 g-0 ">
+            <figure class="blog-block-content image-zoom m-0">
+                <a href="blog-single.html" class=" position-relative">
+                    <img class="blog-block-img img-fluid position-relative" src="images/blog7.png" alt="">
+                    <div class="header-overlay position-absolute d-flex justify-content-center">
+                        <h5 class="blog-block-heading p-5">5 Helpful Tips for Living Healthy Life</h5>
+                    </div>
+                </a>
+            </figure>
+            <figure class="blog-block-content image-zoom m-0">
+                <a href="blog-single.html" class=" position-relative">
+                    <img class="blog-block-img img-fluid position-relative" src="images/blog8.png" alt="">
+                    <div class="header-overlay position-absolute d-flex justify-content-center">
+                        <h5 class="blog-block-heading p-5">5 Helpful Tips for Living Healthy Life</h5>
+                    </div>
+                </a>
+            </figure>
+            <figure class="blog-block-content image-zoom m-0">
+                <a href="blog-single.html" class=" position-relative">
+                    <img class="blog-block-img img-fluid position-relative" src="images/blog9.png" alt="">
+                    <div class="header-overlay position-absolute d-flex justify-content-center">
+                        <h5 class="blog-block-heading p-5">5 Helpful Tips for Living Healthy Life</h5>
+                    </div>
+                </a>
+            </figure>
+            <figure class="blog-block-content image-zoom m-0">
+                <a href="blog-single.html" class=" position-relative">
+                    <img class="blog-block-img img-fluid position-relative" src="images/blog10.png" alt="">
+                    <div class="header-overlay position-absolute d-flex justify-content-center">
+                        <h5 class="blog-block-heading p-5">5 Helpful Tips for Living Healthy Life</h5>
+                    </div>
+                </a>
+            </figure>
+            <figure class="blog-block-content image-zoom m-0">
+                <a href="blog-single.html" class=" position-relative">
+                    <img class="blog-block-img img-fluid position-relative" src="images/blog11.png" alt="">
+                    <div class="header-overlay position-absolute d-flex justify-content-center">
+                        <h5 class="blog-block-heading p-5">5 Helpful Tips for Living Healthy Life</h5>
+                    </div>
+                </a>
+            </figure>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- Footer Section Starts -->
+    <section id="footer" class="position-relative">
+
+        <div class="pattern-overlay pattern-left position-absolute">
+            <img src="images/leaf-img-pattern-left.png" alt="pattern">
+        </div>
+        <div class="pattern-overlay pattern-right position-absolute">
+            <img src="images/leaf-img-pattern-right.png" alt="pattern">
+        </div>
+
+        <div class="container footer-container py-5 ">
+            <footer class="row my-5 py-5 ">
+
+                <div class="col-6 col-md-2 ">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="footer-link ">Twitter</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link ">Facebook</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link ">Instagram</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link ">Linkedin </a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 ">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">About</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Contact</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Blog</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Policy</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Terms</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 ">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Spirituality</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Life</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Relationships</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Travel</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Health</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 ">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Yoga</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Gardening</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Love</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Books</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Meditation</a></li>
+                    </ul>
+                </div>
+
+
+
+                <div class=" col-md-4 mt-5 mt-md-0 text-md-end">
+                    <p class="m-0"> <b>marygrace.dapdap@bicol-u.edu.ph</b> </p>
+                    <p class="m-0">San Andres, Sto. Domingo Albay</p>
+                    <p class="m-0">0963 652 1093</p>
+
+                    <div class=" mt-3 d-flex justify-content-md-end">
+                        <a href="#" class="social-link active" target="_blank"><iconify-icon class="social-icon"
+                                icon="mdi:facebook"></iconify-icon></a>
+                        <a href="#" class="social-link ps-3" target="_blank"><iconify-icon class="social-icon"
+                                icon="mdi:instagram"></iconify-icon></a>
+                        <a href="#" class="social-link ps-3" target="_blank"><iconify-icon class="social-icon"
+                                icon="mdi:twitter"></iconify-icon></a>
+                        <a href="#" class="social-link ps-3" target="_blank"><iconify-icon class="social-icon"
+                                icon="mdi:linkedin"></iconify-icon></a>
+                        <a href="#" class="social-link ps-3" target="_blank"><iconify-icon class="social-icon"
+                                icon="mdi:youtube"></iconify-icon></a>
+
+                    </div>
+
+                </div>
+                <style>
+                    /* Loader styles */
+                    .absolute { position: absolute; }
+                    .inline-block { display: inline-block; }
+                    .loader {
+                        display: flex;
+                        margin: 0.25em 0;
+                    }
+                    .w-2 { width: 0.5em; }
+                    .dash {
+                        animation: dashArray 2s ease-in-out infinite,
+                            dashOffset 2s linear infinite;
+                    }
+                    .dash-reverse {
+                        animation: dashArrayReverse 2s ease-in-out infinite,
+                            dashOffsetReverse 2s linear infinite;
+                    }
+                    .spin {
+                        animation: spinDashArray 2s ease-in-out infinite,
+                            spin 8s ease-in-out infinite,
+                            dashOffset 2s linear infinite;
+                        transform-origin: center;
+                    }
+                    
+                    /* Animation keyframes */
+                    @keyframes dashArray {
+                        0% { stroke-dasharray: 0 1 359 0; }
+                        50% { stroke-dasharray: 0 359 1 0; }
+                        100% { stroke-dasharray: 359 1 0 0; }
+                    }
+                    @keyframes dashArrayReverse {
+                        0% { stroke-dasharray: 359 1 0 0; }
+                        50% { stroke-dasharray: 0 359 1 0; }
+                        100% { stroke-dasharray: 0 1 359 0; }
+                    }
+                    @keyframes dashOffset {
+                        0% { stroke-dashoffset: 365; }
+                        100% { stroke-dashoffset: 5; }
+                    }
+                    @keyframes dashOffsetReverse {
+                        0% { stroke-dashoffset: 5; }
+                        100% { stroke-dashoffset: 365; }
+                    }
+                    @keyframes spinDashArray {
+                        0% { stroke-dasharray: 270 90; }
+                        50% { stroke-dasharray: 0 360; }
+                        100% { stroke-dasharray: 270 90; }
+                    }
+                    @keyframes spin {
+                        0% { rotate: 0deg; }
+                        12.5%, 25% { rotate: 270deg; }
+                        37.5%, 50% { rotate: 540deg; }
+                        62.5%, 75% { rotate: 810deg; }
+                        87.5%, 100% { rotate: 1080deg; }
+                    }
+                    
+                    /* Loader wrapper */
+                    .loader-wrapper {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: white;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 9999;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: opacity 0.3s ease-in-out;
+                    }
+                    
+                    .loader-wrapper.show {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                    </style>
+            </footer>
+
+            <footer class="d-flex flex-wrap justify-content-between align-items-center border-top"></footer>
+
+            <footer class="  py-2 pt-4">
+                <div class="d-flex flex-column align-items-center mt-3">
+                    <p class="mb-0">SDCC © 2025 OJT Intern. All rights reserved.</p>
+                </div>
+            </footer>
+
+        </div>
+
+
+
+
+
+
+
+    </section>
+
+
+
+    <!-- script ================================================== -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Bootstarp script ================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+    <!-- Swiper script ================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!--iconify script ================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const loader = document.getElementById('loader-wrapper');
+    
+    // Show loader when clicking any link
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (this.getAttribute('href').startsWith('#') || this.getAttribute('target') === '_blank') {
+                return;
+            }
+            
+            e.preventDefault();
+            const targetHref = this.getAttribute('href');
+            
+            loader.classList.add('show');
+            
+            setTimeout(() => {
+                window.location.href = targetHref;
+            }, 2000); // Changed from 1500 to 2000 milliseconds
+        });
+    });
+    
+    // Show loader on form submission
+    document.querySelectorAll('form').forEach(form => {
+        form.addEventListener('submit', function(e) {
+            loader.classList.add('show');
+        });
+    });
+});
+        
+        // Show loader when using browser back/forward buttons
+window.addEventListener('beforeunload', function() {
+    const loader = document.getElementById('loader-wrapper');
+    loader.classList.add('show');
+});
+        </script>
+</body>
+
+</html>
