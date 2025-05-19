@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My OJT Blog</title>
+    
+        <!--vendor css ================================================== -->
+        <link rel="stylesheet" type="text/css" href="css/vendor.css">
+    
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    
+        <!--Bootstrap ================================================== -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    
+        <!-- Style Sheet ================================================== -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+    
+        <!-- Google Fonts ================================================== -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jaldi&family=Merriweather:wght@300;400;700&display=swap"
+            rel="stylesheet">
+    
+    
+        <!-- script ================================================== -->
+        <script src="js/modernizr.js"></script>
+    </head>
+
+<body>
+      <!-- Add this right after the opening <body> tag in each file -->
+<div id="loader-wrapper" class="loader-wrapper">
+    <div class="loader">
+      <svg height="0" width="0" viewBox="0 0 64 64" class="absolute">
+        <defs xmlns="http://www.w3.org/2000/svg">
+          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="b">
+            <stop stop-color="#973BED"></stop>
+            <stop stop-color="#007CFF" offset="1"></stop>
+          </linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="0" x2="0" y1="64" x1="0" id="c">
+            <stop stop-color="#FFC800"></stop>
+            <stop stop-color="#F0F" offset="1"></stop>
+            <animateTransform repeatCount="indefinite" keySplines=".42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1" keyTimes="0; 0.125; 0.25; 0.375; 0.5; 0.625; 0.75; 0.875; 1" dur="8s" values="0 32 32;-270 32 32;-270 32 32;-540 32 32;-540 32 32;-810 32 32;-810 32 32;-1080 32 32;-1080 32 32" type="rotate" attributeName="gradientTransform"></animateTransform>
+          </linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="d">
+            <stop stop-color="#00E0ED"></stop>
+            <stop stop-color="#00DA72" offset="1"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+      
+      <!-- SDCC Letters -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#b)" d="M 54,12 C 54,6 48,4 32,4 16,4 10,6 10,12 10,24 16,28 32,28 48,28 54,36 54,44 54,56 48,60 32,60 16,60 10,56 10,52" class="dash" pathLength="360"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#c)" d="M 14,4 L 32,4 C 48,4 54,16 54,32 54,48 48,60 32,60 L 14,60 Z" class="dash" pathLength="360"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#d)" d="M 54,16 C 54,8 48,4 32,4 16,4 10,8 10,32 10,56 16,60 32,60 48,60 54,56 54,48" class="dash" pathLength="360"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#d)" d="M 54,16 C 54,8 48,4 32,4 16,4 10,8 10,32 10,56 16,60 32,60 48,60 54,56 54,48" class="dash-reverse" pathLength="360"></path>
+      </svg>
+    </div>
+  </div>
+    <!-- Back Button -->
+    <div class="back-button-container">
+        <a href="blog.html" class="back-button">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+            </svg>
+            Back to Blogs
+        </a>
+    </div>
+
+    <!-- Blog Content -->
+    <div class="container blog-single-container">
+        <article class="blog-article">
+            <!-- Header -->
+            <header class="blog-header">
+                <h1 class="blog-title">2nd Blog of the SDCC Campus Events</h1>
+                <div class="blog-meta">
+                    <span class="category">IN EVENTS</span>
+                    <span class="date">ON 12TH JAN 2023</span>
+                </div>
+            </header>
+
+            <!-- Content Sections -->
+            <div class="content-section">
+                <div class="image-section">
+                    <img src="images/blog11.png" alt="Event Main Image" class="img-fluid">
+                </div>
+                <div class="text-section">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="text-section">
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="image-section">
+                    <img src="images/blog-detail-2.jpg" alt="Second Event Image" class="img-fluid">
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="image-section">
+                    <img src="images/blog-detail-3.jpg" alt="Third Event Image" class="img-fluid">
+                </div>
+                <div class="text-section">
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Navigation Buttons -->
+        <div class="blog-navigation">
+            <a href="blog-single.html" class="nav-button prev-button">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                </svg>
+                Previous Post
+            </a>
+            <a href="#" class="nav-button next-button">
+                Next Post
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Add this CSS to your existing styles -->
+    <style>
+        .back-button-container {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .back-button {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .back-button:hover {
+            background-color: #f5f5f5;
+            transform: translateY(-2px);
+        }
+
+        .back-button svg {
+            margin-right: 8px;
+            fill: currentColor;
+        }
+
+        .blog-single-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .blog-meta {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .content-section {
+            margin-bottom: 60px;
+        }
+
+        .image-section {
+            margin-bottom: 30px;
+        }
+
+        .image-section img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .text-section {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .blog-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-button {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #f5f5f5;
+            transform: translateY(-2px);
+        }
+
+        .prev-button svg {
+            margin-right: 8px;
+        }
+
+        .next-button svg {
+            margin-left: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-title {
+                font-size: 2rem;
+            }
+
+            .text-section {
+                font-size: 1rem;
+            }
+
+            .nav-button {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        } /* Loader styles */
+.absolute { position: absolute; }
+.inline-block { display: inline-block; }
+.loader {
+    display: flex;
+    margin: 0.25em 0;
+}
+.w-2 { width: 0.5em; }
+.dash {
+    animation: dashArray 2s ease-in-out infinite,
+        dashOffset 2s linear infinite;
+}
+.dash-reverse {
+    animation: dashArrayReverse 2s ease-in-out infinite,
+        dashOffsetReverse 2s linear infinite;
+}
+.spin {
+    animation: spinDashArray 2s ease-in-out infinite,
+        spin 8s ease-in-out infinite,
+        dashOffset 2s linear infinite;
+    transform-origin: center;
+}
+
+/* Animation keyframes */
+@keyframes dashArray {
+    0% { stroke-dasharray: 0 1 359 0; }
+    50% { stroke-dasharray: 0 359 1 0; }
+    100% { stroke-dasharray: 359 1 0 0; }
+}
+@keyframes dashArrayReverse {
+    0% { stroke-dasharray: 359 1 0 0; }
+    50% { stroke-dasharray: 0 359 1 0; }
+    100% { stroke-dasharray: 0 1 359 0; }
+}
+@keyframes dashOffset {
+    0% { stroke-dashoffset: 365; }
+    100% { stroke-dashoffset: 5; }
+}
+@keyframes dashOffsetReverse {
+    0% { stroke-dashoffset: 5; }
+    100% { stroke-dashoffset: 365; }
+}
+@keyframes spinDashArray {
+    0% { stroke-dasharray: 270 90; }
+    50% { stroke-dasharray: 0 360; }
+    100% { stroke-dasharray: 270 90; }
+}
+@keyframes spin {
+    0% { rotate: 0deg; }
+    12.5%, 25% { rotate: 270deg; }
+    37.5%, 50% { rotate: 540deg; }
+    62.5%, 75% { rotate: 810deg; }
+    87.5%, 100% { rotate: 1080deg; }
+}
+/* Loader wrapper */
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.loader-wrapper.show {
+    opacity: 1;
+    visibility: visible;
+}
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const loader = document.getElementById('loader-wrapper');
+    
+    // Show loader when clicking any link
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (this.getAttribute('href').startsWith('#') || this.getAttribute('target') === '_blank') {
+                return;
+            }
+            
+            e.preventDefault();
+            const targetHref = this.getAttribute('href');
+            
+            loader.classList.add('show');
+            
+            setTimeout(() => {
+                window.location.href = targetHref;
+            }, 1500);
+        });
+    });
+    
+    // Show loader on form submission
+    document.querySelectorAll('form').forEach(form => {
+        form.addEventListener('submit', function(e) {
+            loader.classList.add('show');
+        });
+    });
+});
+// Show loader when using browser back/forward buttons
+window.addEventListener('beforeunload', function() {
+    const loader = document.getElementById('loader-wrapper');
+    loader.classList.add('show');
+});
+    </script>
+</body>
+</html> 
