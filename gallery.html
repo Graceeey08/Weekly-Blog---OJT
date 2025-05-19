@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My OJT Blog</title>
+    
+        <!--vendor css ================================================== -->
+        <link rel="stylesheet" type="text/css" href="css/vendor.css">
+    
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    
+        <!--Bootstrap ================================================== -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    
+        <!-- Style Sheet ================================================== -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+    
+        <!-- Google Fonts ================================================== -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jaldi&family=Merriweather:wght@300;400;700&display=swap"
+            rel="stylesheet">
+    
+    
+        <!-- script ================================================== -->
+        <script src="js/modernizr.js"></script>
+
+        <!-- Add this in the head section, after other CSS links -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    </head>
+
+<body>
+    <!-- Add this right after the opening <body> tag in each file -->
+<div id="loader-wrapper" class="loader-wrapper">
+    <div class="loader">
+      <svg height="0" width="0" viewBox="0 0 64 64" class="absolute">
+        <defs xmlns="http://www.w3.org/2000/svg">
+          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="b">
+            <stop stop-color="#973BED"></stop>
+            <stop stop-color="#007CFF" offset="1"></stop>
+          </linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="0" x2="0" y1="64" x1="0" id="c">
+            <stop stop-color="#FFC800"></stop>
+            <stop stop-color="#F0F" offset="1"></stop>
+            <animateTransform repeatCount="indefinite" keySplines=".42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1" keyTimes="0; 0.125; 0.25; 0.375; 0.5; 0.625; 0.75; 0.875; 1" dur="8s" values="0 32 32;-270 32 32;-270 32 32;-540 32 32;-540 32 32;-810 32 32;-810 32 32;-1080 32 32;-1080 32 32" type="rotate" attributeName="gradientTransform"></animateTransform>
+          </linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="d">
+            <stop stop-color="#00E0ED"></stop>
+            <stop stop-color="#00DA72" offset="1"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+      
+      <!-- SDCC Letters -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#b)" d="M 54,12 C 54,6 48,4 32,4 16,4 10,6 10,12 10,24 16,28 32,28 48,28 54,36 54,44 54,56 48,60 32,60 16,60 10,56 10,52" class="dash" pathLength="360"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#c)" d="M 14,4 L 32,4 C 48,4 54,16 54,32 54,48 48,60 32,60 L 14,60 Z" class="dash" pathLength="360"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#d)" d="M 54,16 C 54,8 48,4 32,4 16,4 10,8 10,32 10,56 16,60 32,60 48,60 54,56 54,48" class="dash" pathLength="360"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#d)" d="M 54,16 C 54,8 48,4 32,4 16,4 10,8 10,32 10,56 16,60 32,60 48,60 54,56 54,48" class="dash-reverse" pathLength="360"></path>
+      </svg>
+    </div>
+  </div>
+    <!-- Navigation Section Starts -->
+    <nav id="header-nav" class="navbar navbar-expand-lg container-fluid py-4 px-3 px-lg-5 position-fixed">
+        <a class="navbar-brand" href="index.html"><img src="images/try.png" alt="logo"></a>
+        <p class="title-paragraph mb-0 mt-2">a Blog Requirement of BU</p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav text-center align-items-center justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link pe-lg-5" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pe-lg-5" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pe-lg-5" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active pe-lg-5" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pe-lg-5" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Hero Section -->
+    <section id="gallery-hero" class="padding-large jarallax">
+        <div class="container banner-content">
+            <div class="offset-md-2 col-md-8 text-center mt-5">
+                <h1 class="display-1 text-white">Our Gallery</h1>
+                <p class="hero-paragraph mt-3 text-white">Moments captured at SDCC</p>
+            </div>
+        </div>
+        <img src="images/2.JPG" alt="Gallery Hero" class="jarallax-img">
+    </section>
+
+    <!-- Gallery Grid -->
+    <section id="gallery-grid" class="padding-medium">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Gallery Item 1 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a href="images/1.jpeg" data-lightbox="gallery" data-title="Campus Life - March 2024">
+                            <img src="images/1.jpeg" alt="Gallery Image 1" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <h4>Campus Life</h4>
+                                <p>March 2024</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a href="images/2.JPG" data-lightbox="gallery" data-title="Campus Life - March 2024">
+                            <img src="images/2.JPG" alt="Gallery Image 1" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <h4>Campus Life</h4>
+                                <p>March 2024</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a href="images/SDCC.jpg" data-lightbox="gallery" data-title="Campus Life - March 2024">
+                            <img src="images/SDCC.jpg" alt="Gallery Image 1" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <h4>Campus Life</h4>
+                                <p>March 2024</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a href="images/log.jpg" data-lightbox="gallery" data-title="Campus Life - March 2024">
+                            <img src="images/log.jpg" alt="Gallery Image 1" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <h4>Campus Life</h4>
+                                <p>March 2024</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a href="images/opening.jpg" data-lightbox="gallery" data-title="Campus Life - March 2024">
+                            <img src="images/opening.jpg" alt="Gallery Image 1" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <h4>Campus Life</h4>
+                                <p>March 2024</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a href="images/b.jpg" data-lightbox="gallery" data-title="Campus Life - March 2024">
+                            <img src="images/b.jpg" alt="Gallery Image 1" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <h4>Campus Life</h4>
+                                <p>March 2024</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a href="images/g.jpg" data-lightbox="gallery" data-title="Campus Life - March 2024">
+                            <img src="images/g.jpg" alt="Gallery Image 1" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <h4>Campus Life</h4>
+                                <p>March 2024</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a href="images/Ma'am Tes.jpg" data-lightbox="gallery" data-title="Campus Life - March 2024">
+                            <img src="images/Ma'am Tes.jpg" alt="Gallery Image 1" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <h4>Campus Life</h4>
+                                <p>March 2024</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a href="images/SDCC.jpg" data-lightbox="gallery" data-title="Campus Life - March 2024">
+                            <img src="images/SDCC.jpg" alt="Gallery Image 1" class="img-fluid">
+                            <div class="gallery-overlay">
+                                <h4>Campus Life</h4>
+                                <p>March 2024</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        #gallery-hero {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+    
+     #gallery-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        } 
+    
+        /* Navigation styles */
+        .navbar {
+            transition: all 0.3s ease;
+        }
+    
+        .navbar.nav-transparent {
+            background: transparent !important;
+        }
+    
+        .navbar.nav-transparent .nav-link,
+        .navbar.nav-transparent .navbar-brand,
+        .navbar.nav-transparent .blog-subtitle, /* Added for the text beside logo */
+        .navbar.nav-transparent .search-icon { /* Added for search icon */
+            color: white !important;
+        }
+    
+        .navbar.nav-scrolled {
+            background: white !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    
+        .navbar.nav-scrolled .nav-link,
+        .navbar.nav-scrolled .navbar-brand,
+        .navbar.nav-scrolled .blog-subtitle, /* Added for the text beside logo */
+        .navbar.nav-scrolled .search-icon { /* Added for search icon */
+            color: #333 !important;
+        }
+    
+        /* Hero text styles */
+        #gallery-hero .display-1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+    
+        #gallery-hero .hero-paragraph {
+            font-size: 1.90rem;
+            position: relative;
+            z-index: 2;
+        }
+    
+        .blog-subtitle, /* Class for the text beside logo */
+        .search-icon { /* Class for search icon */
+            transition: color 0.3s ease;
+        }
+    
+        .jarallax {
+            position: relative;
+            z-index: 0;
+        }
+    
+        .jarallax-img {
+            position: absolute;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    
+        /* Add these new styles */
+        .navbar.nav-transparent .title-paragraph {
+            color: white !important; /* White text on dark background */
+        }
+    
+        .navbar.nav-transparent .search-icon i {
+            color: white !important; /* White icon on dark background */
+        }
+    
+        .navbar.nav-scrolled .title-paragraph {
+            color: #333 !important; /* Dark text when scrolled */
+        }
+    
+        .navbar.nav-scrolled .search-icon i {
+            color: #333 !important; /* Dark icon when scrolled */
+        }
+    
+        /* Ensure smooth transitions */
+        .title-paragraph,
+        .search-icon i {
+            transition: color 0.3s ease;
+        }
+    
+        /* Make sure the text is visible against any background */
+        .title-paragraph {
+            position: relative;
+            z-index: 2;
+        }
+    
+        /* Ensure the search icon is visible */
+        .search-icon {
+            position: relative;
+            z-index: 2;
+        }
+    
+        /* Mobile/Tablet Navigation Styles */
+        @media (max-width: 991px) { /* Bootstrap's lg breakpoint */
+            /* Reset text color for mobile menu */
+            .navbar.nav-transparent .offcanvas .nav-link,
+            .navbar.nav-transparent .offcanvas-title,
+            .navbar.nav-transparent .offcanvas .navbar-nav .nav-link {
+                color: #333 !important; /* Keep text dark in mobile menu */
+            }
+            
+            /* Keep the main navbar elements white on dark background */
+            .navbar.nav-transparent .navbar-brand,
+            .navbar.nav-transparent .title-paragraph,
+            .navbar.nav-transparent .search-icon,
+            .navbar.nav-transparent .navbar-toggler-icon {
+                color: white !important;
+            }
+    
+            /* Style for mobile menu background */
+            .offcanvas {
+                background-color: white !important;
+            }
+    
+            /* Style for mobile menu close button */
+            .btn-close {
+                color: #333 !important;
+            }
+        }
+    
+        /* Ensure the mobile toggle button is visible on dark backgrounds */
+        .navbar.nav-transparent .navbar-toggler-icon {
+            filter: invert(1); /* Makes the toggle icon white */
+        }
+    
+        /* Reset the toggle icon color when scrolled */
+        .navbar.nav-scrolled .navbar-toggler-icon {
+            filter: none;
+        }
+    
+        /* Fix for search icon color transition */
+        .navbar.nav-transparent .search {
+            color: white !important; /* White icon on dark background */
+            fill: currentColor; /* Ensures SVG fills with current color */
+        }
+    
+        .navbar.nav-scrolled .search {
+            color: #333 !important; /* Dark icon when scrolled */
+            fill: currentColor;
+        }
+    
+        /* Ensure smooth transition */
+        .search {
+            transition: color 0.3s ease;
+        }
+    
+        /* Make sure SVG inherits color properly */
+        .search-button svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+    
+        /* Ensure the search icon container inherits colors */
+        .search-item a {
+            color: inherit;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Navigation text colors */
+        .navbar.nav-transparent .nav-link,
+        .navbar.nav-transparent .navbar-brand,
+        .navbar.nav-transparent .title-paragraph,
+        .navbar.nav-transparent .search-icon,
+        .navbar.nav-transparent .dropdown-toggle {
+            color: white !important;
+        }
+
+        /* Search icon in transparent nav */
+        .navbar.nav-transparent .search {
+            color: white !important;
+            fill: white !important;
+        }
+
+        /* Navigation text colors when scrolled */
+        .navbar.nav-scrolled .nav-link,
+        .navbar.nav-scrolled .navbar-brand,
+        .navbar.nav-scrolled .title-paragraph,
+        .navbar.nav-scrolled .search-icon,
+        .navbar.nav-scrolled .dropdown-toggle {
+            color: #333 !important;
+        }
+
+        /* Search icon when scrolled */
+        .navbar.nav-scrolled .search {
+            color: #333 !important;
+            fill: #333 !important;
+        }
+
+        /* Active link styles */
+        .navbar.nav-transparent .nav-link.active {
+            color: white !important;
+            font-weight: 600;
+        }
+
+        .navbar.nav-scrolled .nav-link.active {
+            color: #333 !important;
+            font-weight: 600;
+        }
+
+        /* Ensure the search icon is visible */
+        .search-button svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        /* Add z-index to ensure navigation is above hero section */
+        #header-nav {
+            z-index: 1000;
+        }
+
+        /* Hero section overlay to ensure text contrast */
+        #gallery-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        /* Ensure hero content is above overlay */
+        .banner-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Make sure all hero text is white and visible */
+        #gallery-hero .display-1,
+        #gallery-hero .hero-paragraph {
+            color: white !important;
+        }
+
+        /* Gallery Item Styles */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            transition: transform 0.3s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h4 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .gallery-overlay p {
+            margin: 5px 0 0;
+            font-size: 0.9rem;
+        }
+
+        /* Lightbox customization */
+        .lb-data .lb-caption {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .lb-data .lb-number {
+            font-size: 0.9rem;
+        }
+
+        /* Add these loader styles before your existing styles */
+        .absolute { position: absolute; }
+        .inline-block { display: inline-block; }
+        .loader {
+            display: flex;
+            margin: 0.25em 0;
+        }
+        .w-2 { width: 0.5em; }
+        .dash {
+            animation: dashArray 2s ease-in-out infinite,
+                dashOffset 2s linear infinite;
+        }
+        .dash-reverse {
+            animation: dashArrayReverse 2s ease-in-out infinite,
+                dashOffsetReverse 2s linear infinite;
+        }
+        .spin {
+            animation: spinDashArray 2s ease-in-out infinite,
+                spin 8s ease-in-out infinite,
+                dashOffset 2s linear infinite;
+            transform-origin: center;
+        }
+
+        /* Animation keyframes */
+        @keyframes dashArray {
+            0% { stroke-dasharray: 0 1 359 0; }
+            50% { stroke-dasharray: 0 359 1 0; }
+            100% { stroke-dasharray: 359 1 0 0; }
+        }
+        @keyframes dashArrayReverse {
+            0% { stroke-dasharray: 359 1 0 0; }
+            50% { stroke-dasharray: 0 359 1 0; }
+            100% { stroke-dasharray: 0 1 359 0; }
+        }
+        @keyframes dashOffset {
+            0% { stroke-dashoffset: 365; }
+            100% { stroke-dashoffset: 5; }
+        }
+        @keyframes dashOffsetReverse {
+            0% { stroke-dashoffset: 5; }
+            100% { stroke-dashoffset: 365; }
+        }
+        @keyframes spinDashArray {
+            0% { stroke-dasharray: 270 90; }
+            50% { stroke-dasharray: 0 360; }
+            100% { stroke-dasharray: 270 90; }
+        }
+        @keyframes spin {
+            0% { rotate: 0deg; }
+            12.5%, 25% { rotate: 270deg; }
+            37.5%, 50% { rotate: 540deg; }
+            62.5%, 75% { rotate: 810deg; }
+            87.5%, 100% { rotate: 1080deg; }
+        }
+
+        /* Loader wrapper */
+        .loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .loader-wrapper.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+
+    <!-- Footer Section Starts -->
+    <section id="footer" class="position-relative">
+
+        <div class="pattern-overlay pattern-left position-absolute">
+            <img src="images/leaf-img-pattern-left.png" alt="pattern">
+        </div>
+        <div class="pattern-overlay pattern-right position-absolute">
+            <img src="images/leaf-img-pattern-right.png" alt="pattern">
+        </div>
+
+        <div class="container footer-container py-5 ">
+            <footer class="row my-5 py-5 ">
+
+                <div class="col-6 col-md-2 ">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="footer-link ">Twitter</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link ">Facebook</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link ">Instagram</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link ">Linkedin </a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 ">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">About</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Contact</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Blog</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Policy</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Terms</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 ">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Spirituality</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Life</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Relationships</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Travel</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Health</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 ">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Yoga</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Gardening</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Love</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Books</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Meditation</a></li>
+                    </ul>
+                </div>
+
+
+
+                <div class=" col-md-4 mt-5 mt-md-0 text-md-end">
+                    <p class="m-0"> <b>marygrace.dapdap@bicol-u.edu.ph</b> </p>
+                    <p class="m-0">San Andres, Sto. Domingo Albay</p>
+                    <p class="m-0">09636521093</p>
+
+                    <div class=" mt-3 d-flex justify-content-md-end">
+                        <a href="#" class="social-link active" target="_blank"><iconify-icon class="social-icon"
+                                icon="mdi:facebook"></iconify-icon></a>
+                        <a href="#" class="social-link ps-3" target="_blank"><iconify-icon class="social-icon"
+                                icon="mdi:instagram"></iconify-icon></a>
+                        <a href="#" class="social-link ps-3" target="_blank"><iconify-icon class="social-icon"
+                                icon="mdi:twitter"></iconify-icon></a>
+                        <a href="#" class="social-link ps-3" target="_blank"><iconify-icon class="social-icon"
+                                icon="mdi:linkedin"></iconify-icon></a>
+                        <a href="#" class="social-link ps-3" target="_blank"><iconify-icon class="social-icon"
+                                icon="mdi:youtube"></iconify-icon></a>
+
+                    </div>
+
+                </div>
+
+            </footer>
+
+            <footer class="d-flex flex-wrap justify-content-between align-items-center border-top"></footer>
+
+            <footer class="  py-2 pt-4">
+                <div class="d-flex flex-column align-items-center mt-3">
+                    <p class="mb-0">SDCC © 2025 OJT Intern. All rights reserved.</p>
+                </div>
+            </footer>
+
+        </div>
+
+
+
+
+
+
+
+    </section>
+
+
+
+    <!-- script ================================================== -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Bootstarp script ================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+    <!-- Swiper script ================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!--iconify script ================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+    <!-- Add these before the closing body tag, after other scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navbar = document.querySelector('.navbar');
+        const heroSection = document.querySelector('#gallery-hero');
+        
+        function updateNavigation() {
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+            const scrollPosition = window.scrollY;
+            
+            if (scrollPosition < heroBottom - navbar.offsetHeight) {
+                navbar.classList.add('nav-transparent');
+                navbar.classList.remove('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-transparent');
+                navbar.classList.add('nav-scrolled');
+            }
+        }
+
+        // Initial check
+        updateNavigation();
+        
+        // Update on scroll
+        window.addEventListener('scroll', updateNavigation);
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    const loader = document.getElementById('loader-wrapper');
+    
+    // Show loader when clicking any link EXCEPT lightbox links
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Don't show loader for lightbox links, anchor links, or external links
+            if (
+                this.getAttribute('href').startsWith('#') || 
+                this.getAttribute('target') === '_blank' ||
+                this.getAttribute('data-lightbox')
+            ) {
+                return;
+            }
+            
+            e.preventDefault();
+            const targetHref = this.getAttribute('href');
+            
+            loader.classList.add('show');
+            
+            setTimeout(() => {
+                window.location.href = targetHref;
+            }, 1500);
+        });
+    });
+    
+    // Show loader on form submission
+    document.querySelectorAll('form').forEach(form => {
+        form.addEventListener('submit', function(e) {
+            loader.classList.add('show');
+        });
+    });
+});
+// Show loader when using browser back/forward buttons
+window.addEventListener('beforeunload', function() {
+    const loader = document.getElementById('loader-wrapper');
+    loader.classList.add('show');
+});
+
+    // Initialize Lightbox with custom options
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true,
+        'showImageNumberLabel': false,
+        'fadeDuration': 300
+    });
+    </script>
+</body>
+</html> 

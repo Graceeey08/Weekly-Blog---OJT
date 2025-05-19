@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My OJT Blog</title>
+    
+        <!--vendor css ================================================== -->
+        <link rel="stylesheet" type="text/css" href="css/vendor.css">
+    
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    
+        <!--Bootstrap ================================================== -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    
+        <!-- Style Sheet ================================================== -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+    
+        <!-- Google Fonts ================================================== -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jaldi&family=Merriweather:wght@300;400;700&display=swap"
+            rel="stylesheet">
+    
+    
+        <!-- script ================================================== -->
+        <script src="js/modernizr.js"></script>
+    </head>
+
+<body>
+    <!-- Add this right after the opening <body> tag -->
+    <div id="loader-wrapper" class="loader-wrapper">
+        <div class="loader">
+            <svg height="0" width="0" viewBox="0 0 64 64" class="absolute">
+                <defs xmlns="http://www.w3.org/2000/svg">
+                    <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="b">
+                        <stop stop-color="#973BED"></stop>
+                        <stop stop-color="#007CFF" offset="1"></stop>
+                    </linearGradient>
+                    <linearGradient gradientUnits="userSpaceOnUse" y2="0" x2="0" y1="64" x1="0" id="c">
+                        <stop stop-color="#FFC800"></stop>
+                        <stop stop-color="#F0F" offset="1"></stop>
+                        <animateTransform repeatCount="indefinite" keySplines=".42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1" keyTimes="0; 0.125; 0.25; 0.375; 0.5; 0.625; 0.75; 0.875; 1" dur="8s" values="0 32 32;-270 32 32;-270 32 32;-540 32 32;-540 32 32;-810 32 32;-810 32 32;-1080 32 32;-1080 32 32" type="rotate" attributeName="gradientTransform"></animateTransform>
+                    </linearGradient>
+                    <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="d">
+                        <stop stop-color="#00E0ED"></stop>
+                        <stop stop-color="#00DA72" offset="1"></stop>
+                    </linearGradient>
+                </defs>
+            </svg>
+            
+            <!-- SDCC Letters -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#b)" d="M 54,12 C 54,6 48,4 32,4 16,4 10,6 10,12 10,24 16,28 32,28 48,28 54,36 54,44 54,56 48,60 32,60 16,60 10,56 10,52" class="dash" pathLength="360"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#c)" d="M 14,4 L 32,4 C 48,4 54,16 54,32 54,48 48,60 32,60 L 14,60 Z" class="dash" pathLength="360"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#d)" d="M 54,16 C 54,8 48,4 32,4 16,4 10,8 10,32 10,56 16,60 32,60 48,60 54,56 54,48" class="dash" pathLength="360"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#d)" d="M 54,16 C 54,8 48,4 32,4 16,4 10,8 10,32 10,56 16,60 32,60 48,60 54,56 54,48" class="dash-reverse" pathLength="360"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Navigation Section Starts -->
+    <nav id="header-nav" class="navbar navbar-expand-lg container-fluid py-4 px-3 px-lg-5 position-fixed">
+        <a class="navbar-brand" href="index.html"><img src="images/try.png" alt="logo"></a>
+        <p class="title-paragraph mb-0 mt-2">a Blog Requirement of BU</p>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav text-center align-items-center justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link pe-lg-5" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pe-lg-5" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pe-lg-5" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pe-lg-5" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active pe-lg-5" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <section id="contact-hero" class="padding-large jarallax">
+        <div class="container banner-content">
+            <div class="offset-md-2 col-md-8 text-center mt-5">
+                <h1 class="display-1 text-white">Contact Us</h1>
+                <p class="hero-paragraph mt-3 text-white">Get in touch with SDCC</p>
+            </div>
+        </div>
+        <img src="images/up.jpg" alt="Contact Hero" class="jarallax-img">
+    </section>
+
+    <!-- Contact Content -->
+    <section id="contact-content" class="padding-medium">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Form -->
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <form class="contact-form" id="contactForm" onsubmit="sendEmail(event)">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" style="resize: none;" required></textarea>
+                        </div>
+                        <button type="submit" class="animated-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36px" height="45px">
+                                <rect width="36" height="36" x="0" y="0" fill="#fdd835"></rect>
+                                <path fill="#e53935" d="M38.67,42H11.52C11.27,40.62,11,38.57,11,36c0-5,0-11,0-11s1.44-7.39,3.22-9.59 c1.67-2.06,2.76-3.48,6.78-4.41c3-0.7,7.13-0.23,9,1c2.15,1.42,3.37,6.67,3.81,11.29c1.49-0.3,5.21,0.2,5.5,1.28 C40.89,30.29,39.48,38.31,38.67,42z"></path>
+                                <path fill="#b71c1c" d="M39.02,42H11.99c-0.22-2.67-0.48-7.05-0.49-12.72c0.83,4.18,1.63,9.59,6.98,9.79 c3.48,0.12,8.27,0.55,9.83-2.45c1.57-3,3.72-8.95,3.51-15.62c-0.19-5.84-1.75-8.2-2.13-8.7c0.59,0.66,3.74,4.49,4.01,11.7 c0.03,0.83,0.06,1.72,0.08,2.66c4.21-0.15,5.93,1.5,6.07,2.35C40.68,33.85,39.8,38.9,39.02,42z"></path>
+                                <path fill="#212121" d="M35,27.17c0,3.67-0.28,11.2-0.42,14.83h-2C32.72,38.42,33,30.83,33,27.17 c0-5.54-1.46-12.65-3.55-14.02c-1.65-1.08-5.49-1.48-8.23-0.85c-3.62,0.83-4.57,1.99-6.14,3.92L15,16.32 c-1.31,1.6-2.59,6.92-3,8.96v10.8c0,2.58,0.28,4.61,0.54,5.92H10.5c-0.25-1.41-0.5-3.42-0.5-5.92l0.02-11.09 c0.15-0.77,1.55-7.63,3.43-9.94l0.08-0.09c1.65-2.03,2.96-3.63,7.25-4.61c3.28-0.76,7.67-0.25,9.77,1.13 C33.79,13.6,35,22.23,35,27.17z"></path>
+                                <path fill="#01579b" d="M17.165,17.283c5.217-0.055,9.391,0.283,9,6.011c-0.391,5.728-8.478,5.533-9.391,5.337 c-0.913-0.196-7.826-0.043-7.696-5.337C9.209,18,13.645,17.32,17.165,17.283z"></path>
+                                <path fill="#212121" d="M40.739,37.38c-0.28,1.99-0.69,3.53-1.22,4.62h-2.43c0.25-0.19,1.13-1.11,1.67-4.9 c0.57-4-0.23-11.79-0.93-12.78c-0.4-0.4-2.63-0.8-4.37-0.89l0.1-1.99c1.04,0.05,4.53,0.31,5.71,1.49 C40.689,24.36,41.289,33.53,40.739,37.38z"></path>
+                                <path fill="#81d4fa" d="M10.154,20.201c0.261,2.059-0.196,3.351,2.543,3.546s8.076,1.022,9.402-0.554 c1.326-1.576,1.75-4.365-0.891-5.267C19.336,17.287,12.959,16.251,10.154,20.201z"></path>
+                                <path fill="#212121" d="M17.615,29.677c-0.502,0-0.873-0.03-1.052-0.069c-0.086-0.019-0.236-0.035-0.434-0.06 c-5.344-0.679-8.053-2.784-8.052-6.255c0.001-2.698,1.17-7.238,8.986-7.32l0.181-0.002c3.444-0.038,6.414-0.068,8.272,1.818 c1.173,1.191,1.712,3,1.647,5.53c-0.044,1.688-0.785,3.147-2.144,4.217C22.785,29.296,19.388,29.677,17.615,29.677z M17.086,17.973 c-7.006,0.074-7.008,4.023-7.008,5.321c-0.001,3.109,3.598,3.926,6.305,4.27c0.273,0.035,0.48,0.063,0.601,0.089 c0.563,0.101,4.68,0.035,6.855-1.732c0.865-0.702,1.299-1.57,1.326-2.653c0.051-1.958-0.301-3.291-1.073-4.075 c-1.262-1.281-3.834-1.255-6.825-1.222L17.086,17.973z"></path>
+                                <path fill="#e1f5fe" d="M15.078,19.043c1.957-0.326,5.122-0.529,4.435,1.304c-0.489,1.304-7.185,2.185-7.185,0.652 C12.328,19.467,15.078,19.043,15.078,19.043z"></path>
+                            </svg>
+                            <span class="now">now!</span>
+                            <span class="send">send</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Success Modal (update this part) -->
+<div class="modal fade" id="messageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Add confetti containers with proper positioning -->
+            <div class="confetti-container left" style="left: -100px;"></div>
+            <div class="confetti-container right" style="right: -100px;"></div>
+            
+            <div class="modal-body text-center py-4">
+                <div class="success-checkmark">
+                    <div class="check-icon">
+                        <span class="icon-line line-tip"></span>
+                        <span class="icon-line line-long"></span>
+                        <div class="icon-circle"></div>
+                        <div class="icon-fix"></div>
+                    </div>
+                </div>
+                <h4 id="modalMessage" style="color: #69b76b; margin-top: 20px;">Message Sent!</h4>
+            </div>
+            <div class="modal-footer justify-content-center border-0 pb-4">
+                <button type="button" class="btn btn-success px-5" data-bs-dismiss="modal">Okay</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+                <!-- Contact Information -->
+                <div class="col-lg-4 offset-lg-1">
+                    <div class="contact-info">
+                        <h3 class="mb-4">Contact Information</h3>
+                        <div class="info-item mb-4">
+                            <h5>Address</h5>
+                            <p>San Andres, Sto. Domingo Albay</p>
+                        </div>
+                        <div class="info-item mb-4">
+                            <h5>Phone</h5>
+                            <p>0963 652 1093</p>
+                        </div>
+                        <div class="info-item mb-4">
+                            <h5>Email</h5>
+                            <p>marygrace.dapdap@bicol-u.edu.ph</p>
+                        </div>
+                        <div class="info-item">
+                            <h5>Social Media</h5>
+                            <div class="social-links mt-2">
+                                <a href="#" class="me-3"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        #contact-hero {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+    
+     #contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        } 
+    
+        /* Navigation styles */
+        .navbar {
+            transition: all 0.3s ease;
+        }
+    
+        .navbar.nav-transparent {
+            background: transparent !important;
+        }
+    
+        .navbar.nav-transparent .nav-link,
+        .navbar.nav-transparent .navbar-brand,
+        .navbar.nav-transparent .blog-subtitle, /* Added for the text beside logo */
+        .navbar.nav-transparent .search-icon { /* Added for search icon */
+            color: white !important;
+        }
+    
+        .navbar.nav-scrolled {
+            background: white !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    
+        .navbar.nav-scrolled .nav-link,
+        .navbar.nav-scrolled .navbar-brand,
+        .navbar.nav-scrolled .blog-subtitle, /* Added for the text beside logo */
+        .navbar.nav-scrolled .search-icon { /* Added for search icon */
+            color: #333 !important;
+        }
+    
+        /* Hero text styles */
+        #contact-hero .display-1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+    
+        #contact-hero .hero-paragraph {
+            font-size: 1.90rem;
+            position: relative;
+            z-index: 2;
+        }
+    
+        .blog-subtitle, /* Class for the text beside logo */
+        .search-icon { /* Class for search icon */
+            transition: color 0.3s ease;
+        }
+    
+        .jarallax {
+            position: relative;
+            z-index: 0;
+        }
+    
+        .jarallax-img {
+            position: absolute;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    
+        /* Add these new styles */
+        .navbar.nav-transparent .title-paragraph {
+            color: white !important; /* White text on dark background */
+        }
+    
+        .navbar.nav-transparent .search-icon i {
+            color: white !important; /* White icon on dark background */
+        }
+    
+        .navbar.nav-scrolled .title-paragraph {
+            color: #333 !important; /* Dark text when scrolled */
+        }
+    
+        .navbar.nav-scrolled .search-icon i {
+            color: #333 !important; /* Dark icon when scrolled */
+        }
+    
+        /* Ensure smooth transitions */
+        .title-paragraph,
+        .search-icon i {
+            transition: color 0.3s ease;
+        }
+    
+        /* Make sure the text is visible against any background */
+        .title-paragraph {
+            position: relative;
+            z-index: 2;
+        }
+    
+        /* Ensure the search icon is visible */
+        .search-icon {
+            position: relative;
+            z-index: 2;
+        }
+    
+        /* Mobile/Tablet Navigation Styles */
+        @media (max-width: 991px) { /* Bootstrap's lg breakpoint */
+            /* Reset text color for mobile menu */
+            .navbar.nav-transparent .offcanvas .nav-link,
+            .navbar.nav-transparent .offcanvas-title,
+            .navbar.nav-transparent .offcanvas .navbar-nav .nav-link {
+                color: #333 !important; /* Keep text dark in mobile menu */
+            }
+            
+            /* Keep the main navbar elements white on dark background */
+            .navbar.nav-transparent .navbar-brand,
+            .navbar.nav-transparent .title-paragraph,
+            .navbar.nav-transparent .search-icon,
+            .navbar.nav-transparent .navbar-toggler-icon {
+                color: white !important;
+            }
+    
+            /* Style for mobile menu background */
+            .offcanvas {
+                background-color: white !important;
+            }
+    
+            /* Style for mobile menu close button */
+            .btn-close {
+                color: #333 !important;
+            }
+        }
+    
+        /* Ensure the mobile toggle button is visible on dark backgrounds */
+        .navbar.nav-transparent .navbar-toggler-icon {
+            filter: invert(1); /* Makes the toggle icon white */
+        }
+    
+        /* Reset the toggle icon color when scrolled */
+        .navbar.nav-scrolled .navbar-toggler-icon {
+            filter: none;
+        }
+    
+        /* Fix for search icon color transition */
+        .navbar.nav-transparent .search {
+            color: white !important; /* White icon on dark background */
+            fill: currentColor; /* Ensures SVG fills with current color */
+        }
+    
+        .navbar.nav-scrolled .search {
+            color: #333 !important; /* Dark icon when scrolled */
+            fill: currentColor;
+        }
+    
+        /* Ensure smooth transition */
+        .search {
+            transition: color 0.3s ease;
+        }
+    
+        /* Make sure SVG inherits color properly */
+        .search-button svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+    
+        /* Ensure the search icon container inherits colors */
+        .search-item a {
+            color: inherit;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Navigation text colors */
+        .navbar.nav-transparent .nav-link,
+        .navbar.nav-transparent .navbar-brand,
+        .navbar.nav-transparent .title-paragraph,
+        .navbar.nav-transparent .search-icon,
+        .navbar.nav-transparent .dropdown-toggle {
+            color: white !important;
+        }
+
+        /* Search icon in transparent nav */
+        .navbar.nav-transparent .search {
+            color: white !important;
+            fill: white !important;
+        }
+
+        /* Navigation text colors when scrolled */
+        .navbar.nav-scrolled .nav-link,
+        .navbar.nav-scrolled .navbar-brand,
+        .navbar.nav-scrolled .title-paragraph,
+        .navbar.nav-scrolled .search-icon,
+        .navbar.nav-scrolled .dropdown-toggle {
+            color: #333 !important;
+        }
+
+        /* Search icon when scrolled */
+        .navbar.nav-scrolled .search {
+            color: #333 !important;
+            fill: #333 !important;
+        }
+
+        /* Active link styles */
+        .navbar.nav-transparent .nav-link.active {
+            color: white !important;
+            font-weight: 600;
+        }
+
+        .navbar.nav-scrolled .nav-link.active {
+            color: #333 !important;
+            font-weight: 600;
+        }
+
+        /* Ensure the search icon is visible */
+        .search-button svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        /* Add z-index to ensure navigation is above hero section */
+        #header-nav {
+            z-index: 1000;
+        }
+
+        /* Hero section overlay to ensure text contrast */
+        #contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        /* Ensure hero content is above overlay */
+        .banner-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Make sure all hero text is white and visible */
+        #contact-hero .display-1,
+        #contact-hero .hero-paragraph {
+            color: white !important;
+        }
+
+        /* Modal styles */
+        .modal-content {
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .icon-container {
+            height: 120px;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        /* Circle animation */
+        .success-checkmark {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+    }
+
+    .check-icon {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border-radius: 50%;
+        box-sizing: content-box;
+        border: 4px solid #69b76b;
+    }
+
+    .check-icon::before {
+        top: 6px;
+        left: -2px;
+        width: 30px;
+        transform-origin: 100% 50%;
+        border-radius: 100px 0 0 100px;
+    }
+
+    .check-icon::after {
+        top: 0;
+        left: 30px;
+        width: 60px;
+        transform-origin: 0 50%;
+        border-radius: 0 100px 100px 0;
+        animation: rotate-circle 4.25s ease-in;
+    }
+    .icon-line {
+        height: 5px;
+        background-color: #69b76b;
+        display: block;
+        border-radius: 2px;
+        position: absolute;
+        z-index: 10;
+    }
+
+    .icon-line.line-tip {
+        top: 54px;
+        left: 34px;
+        width: 25px;
+        transform: rotate(45deg);
+        animation: icon-line-tip 0.75s;
+    }
+
+    .icon-line.line-long {
+        top: 46px;
+        right: 26px;
+        width: 47px;
+        transform: rotate(-45deg);
+        animation: icon-line-long 0.75s;
+    }
+    .icon-circle {
+        top: -5px;
+        left: -5px;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        position: absolute;
+        box-sizing: content-box;
+        border: 4px solid #69b76b;
+    }
+
+    .icon-fix {
+        top: 8px;
+        width: 5px;
+        left: 26px;
+        z-index: 1;
+        height: 85px;
+        position: absolute;
+        transform: rotate(-45deg);
+        background-color: white;
+    }
+
+    @keyframes icon-line-tip {
+        0% {
+            width: 0;
+            left: 1px;
+            top: 19px;
+        }
+        54% {
+            width: 0;
+            left: 1px;
+            top: 19px;
+        }
+        70% {
+            width: 50px;
+            left: -8px;
+            top: 37px;
+        }
+        84% {
+            width: 17px;
+            left: 21px;
+            top: 38px;
+        }
+        100% {
+            width: 25px;
+            left: 26px;
+            top: 46px;
+        }
+    }
+    @keyframes icon-line-long {
+        0% {
+            width: 0;
+            right: 46px;
+            top: 54px;
+        }
+        65% {
+            width: 0;
+            right: 46px;
+            top: 54px;
+        }
+        84% {
+            width: 55px;
+            right: 0px;
+            top: 38px;
+        }
+        100% {
+            width: 47px;
+            right: 26px;
+            top: 38px;
+        }
+    }
+        /* Adjust modal content spacing */
+    .modal-body {
+        padding: 2rem 1rem;
+    }
+
+    #modalMessage {
+        margin-top: 1.5rem;
+        font-size: 1.5rem;
+    }
+        /* Okay button hover state */
+        .btn-success:hover {
+            background-color: #5aa35c !important;
+            border-color: #5aa35c !important;
+        }
+
+        /* Modal spacing */
+        .modal-body {
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        .modal-footer {
+            padding-top: 0;
+        }
+
+        /* Animated button styles */
+        .animated-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 0 10px;
+            color: white;
+            text-shadow: 2px 2px rgb(116, 116, 116);
+            text-transform: uppercase;
+            cursor: pointer;
+            border: solid 2px black;
+            letter-spacing: 1px;
+            font-weight: 600;
+            font-size: 17px;
+            background-color: hsl(49deg 98% 60%);
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            height: 45px; /* Added fixed height */
+        }
+
+        .animated-button:active {
+            transform: scale(0.9);
+            transition: all 100ms ease;
+        }
+
+        .animated-button svg {
+            transition: all 0.5s ease;
+            z-index: 2;
+        }
+
+        .send {
+            transition: all 0.5s ease;
+            transition-delay: 300ms;
+        }
+
+        .animated-button:hover svg {
+            transform: scale(3) translate(50%);
+        }
+
+        .now {
+            position: absolute;
+            left: 0;
+            transform: translateX(-100%);
+            transition: all 0.5s ease;
+            z-index: 2;
+        }
+
+        .animated-button:hover .now {
+            transform: translateX(10px);
+            transition-delay: 300ms;
+        }
+
+        .animated-button:hover .send {
+            transform: translateX(200%);
+            transition-delay: 300ms;
+        }
+
+        /* Add margin to the button container */
+        .contact-form button {
+            margin-top: 20px;
+        }
+
+        /* Your existing loader styles */
+        .absolute { position: absolute; }
+        .inline-block { display: inline-block; }
+        .loader {
+            display: flex;
+            margin: 0.25em 0;
+        }
+
+        /* New wrapper styles */
+        .loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .loader-wrapper.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        /* Loader styles */
+.absolute { position: absolute; }
+.inline-block { display: inline-block; }
+.loader {
+    display: flex;
+    margin: 0.25em 0;
+}
+.w-2 { width: 0.5em; }
+.dash {
+    animation: dashArray 2s ease-in-out infinite,
+        dashOffset 2s linear infinite;
+}
+.dash-reverse {
+    animation: dashArrayReverse 2s ease-in-out infinite,
+        dashOffsetReverse 2s linear infinite;
+}
+.spin {
+    animation: spinDashArray 2s ease-in-out infinite,
+        spin 8s ease-in-out infinite,
+        dashOffset 2s linear infinite;
+    transform-origin: center;
+}
+
+/* Animation keyframes */
+@keyframes dashArray {
+    0% { stroke-dasharray: 0 1 359 0; }
+    50% { stroke-dasharray: 0 359 1 0; }
+    100% { stroke-dasharray: 359 1 0 0; }
+}
+@keyframes dashArrayReverse {
+    0% { stroke-dasharray: 359 1 0 0; }
+    50% { stroke-dasharray: 0 359 1 0; }
+    100% { stroke-dasharray: 0 1 359 0; }
+}
+@keyframes dashOffset {
+    0% { stroke-dashoffset: 365; }
+    100% { stroke-dashoffset: 5; }
+}
+@keyframes dashOffsetReverse {
+    0% { stroke-dashoffset: 5; }
+    100% { stroke-dashoffset: 365; }
+}
+@keyframes spinDashArray {
+    0% { stroke-dasharray: 270 90; }
+    50% { stroke-dasharray: 0 360; }
+    100% { stroke-dasharray: 270 90; }
+}
+@keyframes spin {
+    0% { rotate: 0deg; }
+    12.5%, 25% { rotate: 270deg; }
+    37.5%, 50% { rotate: 540deg; }
+    62.5%, 75% { rotate: 810deg; }
+    87.5%, 100% { rotate: 1080deg; }
+}
+/* Loader wrapper */
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.loader-wrapper.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Confetti containers */
+.confetti-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100px;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 1060;
+}
+
+.confetti-container.left {
+    left: -100px;
+}
+
+.confetti-container.right {
+    right: -100px;
+}
+
+/* Confetti pieces */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    opacity: 0;
+    animation: confetti-fall 3s ease-in-out forwards;
+}
+
+/* Generate different colors for confetti */
+.confetti:nth-child(3n) { background-color: #69b76b; }
+.confetti:nth-child(3n+1) { background-color: #fdd835; }
+.confetti:nth-child(3n+2) { background-color: #ff5252; }
+
+@keyframes confetti-fall {
+    0% {
+        opacity: 1;
+        top: -20px;
+        transform: translateX(0) rotate(0deg);
+    }
+    25% {
+        transform: translateX(100px) rotate(360deg);
+    }
+    50% {
+        transform: translateX(-100px) rotate(720deg);
+    }
+    75% {
+        transform: translateX(50px) rotate(1080deg);
+    }
+    100% {
+        opacity: 0;
+        top: 100%;
+        transform: translateX(-50px) rotate(1440deg);
+    }
+}
+
+/* Modal content styles */
+.modal-content {
+    overflow: visible;
+    position: relative;
+}
+    </style>
+
+    <!-- Footer Section Starts -->
+    <section id="footer" class="position-relative">
+
+        <div class="pattern-overlay pattern-left position-absolute">
+            <img src="images/leaf-img-pattern-left.png" alt="pattern">
+        </div>
+        <div class="pattern-overlay pattern-right position-absolute">
+            <img src="images/leaf-img-pattern-right.png" alt="pattern">
+        </div>
+
+        <div class="container footer-container py-5 ">
+            <footer class="row my-5 py-5 ">
+
+                <div class="col-6 col-md-2 ">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="footer-link ">Twitter</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link ">Facebook</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link ">Instagram</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link ">Linkedin </a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 ">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">About</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Contact</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Blog</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Policy</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="footer-link">Terms</a></li>
+                    </ul>
+                </div>
+                <div class=" col-md-4 mt-5 mt-md-0 text-md-end">
+                    <p class="m-0"> <b>marygrace.dapdap@bicol-u.edu.ph</b> </p>
+                    <p class="m-0">San Andres, Sto. Domingo Albay</p>
+                    <p class="m-0">0963 652 1093</p>
+
+                    <div class=" mt-3 d-flex justify-content-md-end">
+                        <a href="#" class="social-link active" target="_blank"><iconify-icon class="social-icon"
+                                icon="mdi:facebook"></iconify-icon></a>
+                        <a href="#" class="social-link ps-3" target="_blank"><iconify-icon class="social-icon"
+                                icon="mdi:instagram"></iconify-icon></a>
+                        <a href="#" class="social-link ps-3" target="_blank"><iconify-icon class="social-icon"
+                                icon="mdi:twitter"></iconify-icon></a>
+                        <a href="#" class="social-link ps-3" target="_blank"><iconify-icon class="social-icon"
+                                icon="mdi:linkedin"></iconify-icon></a>
+                        <a href="#" class="social-link ps-3" target="_blank"><iconify-icon class="social-icon"
+                                icon="mdi:youtube"></iconify-icon></a>
+
+                    </div>
+
+                </div>
+
+            </footer>
+
+            <footer class="d-flex flex-wrap justify-content-between align-items-center border-top"></footer>
+
+            <footer class="  py-2 pt-4">
+                <div class="d-flex flex-column align-items-center mt-3">
+                    <p class="mb-0">SDCC © 2025 OJT Intern. All rights reserved.</p>
+                </div>
+            </footer>
+
+        </div>
+
+
+
+
+
+
+
+    </section>
+
+
+
+    <!-- script ================================================== -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Bootstarp script ================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+    <!-- Swiper script ================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!--iconify script ================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+<!-- Add this script tag in your head section or before closing body -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+    (function() {
+        emailjs.init("9EEWRpao6sbEaL-QP"); // Replace with your EmailJS user ID
+    })();
+
+    async function sendEmail(event) {
+        event.preventDefault();
+        
+        const messageModal = new bootstrap.Modal(document.getElementById('messageModal'));
+        const modalMessage = document.getElementById('modalMessage');
+        const checkmark = document.querySelector('.checkmark');
+        
+        try {
+            await emailjs.send("service_6pfgf1j", "template_nvrgwzf", {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                to_email: "jeromebansale.lolong@bicol-u.edu.ph"
+            });
+            
+            // Success state
+            checkmark.classList.remove('error');
+            modalMessage.textContent = "Message Sent!";
+            modalMessage.style.color = "#4bb71b";
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
+            
+        } catch (error) {
+            // Error state
+            checkmark.classList.add('error');
+            modalMessage.textContent = "Failed to send message";
+            modalMessage.style.color = "#ff4444";
+        }
+        
+        messageModal.show();
+    }
+    </script>
+
+    <!-- Add this script before the closing </body> tag -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const loader = document.getElementById('loader-wrapper');
+        
+        // Show loader ONLY when clicking navigation menu links
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#') || this.getAttribute('target') === '_blank') {
+                    return;
+                }
+                
+                e.preventDefault();
+                const targetHref = this.getAttribute('href');
+                
+                loader.classList.add('show');
+                
+                setTimeout(() => {
+                    window.location.href = targetHref;
+                }, 2000);
+            });
+        });
+
+        // Contact form submission handler with fixed modal handling
+        function createConfetti(container, count) {
+            container.innerHTML = ''; // Clear existing confetti
+            for (let i = 0; i < count; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.animationDelay = (Math.random() * 2) + 's';
+                container.appendChild(confetti);
+                
+                confetti.addEventListener('animationend', () => {
+                    confetti.remove();
+                });
+            }
+        }
+
+        function showSuccessMessage() {
+            const messageModal = document.getElementById('messageModal');
+            const modal = new bootstrap.Modal(messageModal);
+            
+            // Clear any existing backdrop
+            document.querySelectorAll('.modal-backdrop').forEach(backdrop => backdrop.remove());
+            
+            modal.show();
+            
+            const leftContainer = messageModal.querySelector('.confetti-container.left');
+            const rightContainer = messageModal.querySelector('.confetti-container.right');
+            
+            // Create new confetti immediately
+            createConfetti(leftContainer, 20);
+            createConfetti(rightContainer, 20);
+
+            // Handle modal close properly
+            messageModal.addEventListener('hidden.bs.modal', function () {
+                // Remove backdrop and reset modal
+                document.querySelectorAll('.modal-backdrop').forEach(backdrop => backdrop.remove());
+                document.body.classList.remove('modal-open');
+                document.body.style.overflow = '';
+                document.body.style.paddingRight = '';
+            });
+        }
+
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message with confetti
+            showSuccessMessage();
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Additional cleanup for modal close button
+        document.querySelector('[data-bs-dismiss="modal"]').addEventListener('click', function() {
+            document.querySelectorAll('.modal-backdrop').forEach(backdrop => backdrop.remove());
+            document.body.classList.remove('modal-open');
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
+        });
+    });
+    </script>
+</body>
+</html> 
